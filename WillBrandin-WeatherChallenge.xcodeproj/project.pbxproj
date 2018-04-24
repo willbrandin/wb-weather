@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		03B022D1208FB9D100A4E569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022D0208FB9D100A4E569 /* AppDelegate.swift */; };
-		03B022D3208FB9D100A4E569 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022D2208FB9D100A4E569 /* ViewController.swift */; };
-		03B022D6208FB9D100A4E569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B022D4208FB9D100A4E569 /* Main.storyboard */; };
+		03B022D3208FB9D100A4E569 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022D2208FB9D100A4E569 /* HomeViewController.swift */; };
 		03B022D8208FB9D200A4E569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B022D7208FB9D200A4E569 /* Assets.xcassets */; };
 		03B022DB208FB9D200A4E569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B022D9208FB9D200A4E569 /* LaunchScreen.storyboard */; };
 		03B022E6208FB9D300A4E569 /* WillBrandin_WeatherChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022E5208FB9D300A4E569 /* WillBrandin_WeatherChallengeTests.swift */; };
+		03B022F5208FBBC500A4E569 /* WBColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022F4208FBBC500A4E569 /* WBColors.swift */; };
+		03B022F8208FBC3200A4E569 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022F7208FBC3200A4E569 /* ColorExtensions.swift */; };
+		03B022FA208FBC4A00A4E569 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022F9208FBC4A00A4E569 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +30,16 @@
 /* Begin PBXFileReference section */
 		03B022CD208FB9D100A4E569 /* WillBrandin-WeatherChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WillBrandin-WeatherChallenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B022D0208FB9D100A4E569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03B022D2208FB9D100A4E569 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		03B022D5208FB9D100A4E569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03B022D2208FB9D100A4E569 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		03B022D7208FB9D200A4E569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03B022DA208FB9D200A4E569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03B022DC208FB9D300A4E569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03B022E1208FB9D300A4E569 /* WillBrandin-WeatherChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WillBrandin-WeatherChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B022E5208FB9D300A4E569 /* WillBrandin_WeatherChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillBrandin_WeatherChallengeTests.swift; sourceTree = "<group>"; };
 		03B022E7208FB9D300A4E569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03B022F4208FBBC500A4E569 /* WBColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBColors.swift; sourceTree = "<group>"; };
+		03B022F7208FBC3200A4E569 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		03B022F9208FBC4A00A4E569 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +81,10 @@
 		03B022CF208FB9D100A4E569 /* WillBrandin-WeatherChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				03B022F3208FBBB400A4E569 /* Util */,
+				03B022F2208FBB5500A4E569 /* Models */,
+				03B022F1208FBB4200A4E569 /* ViewControllers */,
 				03B022D0208FB9D100A4E569 /* AppDelegate.swift */,
-				03B022D2208FB9D100A4E569 /* ViewController.swift */,
-				03B022D4208FB9D100A4E569 /* Main.storyboard */,
 				03B022D7208FB9D200A4E569 /* Assets.xcassets */,
 				03B022D9208FB9D200A4E569 /* LaunchScreen.storyboard */,
 				03B022DC208FB9D300A4E569 /* Info.plist */,
@@ -94,6 +99,47 @@
 				03B022E7208FB9D300A4E569 /* Info.plist */,
 			);
 			path = "WillBrandin-WeatherChallengeTests";
+			sourceTree = "<group>";
+		};
+		03B022F0208FBB3A00A4E569 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				03B022D2208FB9D100A4E569 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		03B022F1208FBB4200A4E569 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				03B022F0208FBB3A00A4E569 /* Home */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		03B022F2208FBB5500A4E569 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		03B022F3208FBBB400A4E569 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				03B022F6208FBC2100A4E569 /* Extensions */,
+				03B022F4208FBBC500A4E569 /* WBColors.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		03B022F6208FBC2100A4E569 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03B022F7208FBC3200A4E569 /* ColorExtensions.swift */,
+				03B022F9208FBC4A00A4E569 /* StringExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +225,6 @@
 			files = (
 				03B022DB208FB9D200A4E569 /* LaunchScreen.storyboard in Resources */,
 				03B022D8208FB9D200A4E569 /* Assets.xcassets in Resources */,
-				03B022D6208FB9D100A4E569 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B022D3208FB9D100A4E569 /* ViewController.swift in Sources */,
+				03B022F5208FBBC500A4E569 /* WBColors.swift in Sources */,
+				03B022D3208FB9D100A4E569 /* HomeViewController.swift in Sources */,
+				03B022FA208FBC4A00A4E569 /* StringExtensions.swift in Sources */,
 				03B022D1208FB9D100A4E569 /* AppDelegate.swift in Sources */,
+				03B022F8208FBC3200A4E569 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +269,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		03B022D4208FB9D100A4E569 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03B022D5208FB9D100A4E569 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03B022D9208FB9D200A4E569 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5QM989GLQ;
 				INFOPLIST_FILE = "WillBrandin-WeatherChallenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5QM989GLQ;
 				INFOPLIST_FILE = "WillBrandin-WeatherChallenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
