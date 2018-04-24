@@ -11,14 +11,16 @@ import UIKit
 class HomeViewController: UIViewController {
 
     //MARK: - Properties
-    private var homeSearchView: HomeSearchView!
+    var homeSearchView: HomeSearchView!
+    
+    private var forecastInstance: ForecastInstance?
+    private var shouldShowSearchResults: Bool = false
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchViewConstraints()
-        fetchData()
     }
 
     //MARK: - Methods
@@ -26,7 +28,7 @@ class HomeViewController: UIViewController {
     func setupSearchViewConstraints(){
         
         homeSearchView = HomeSearchView()
-        homeSearchView.customizeUI()
+        homeSearchView.customizeUI(shouldShowSearchResults)
         self.view.addSubview(homeSearchView)
         
         homeSearchView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +36,8 @@ class HomeViewController: UIViewController {
         homeSearchView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         homeSearchView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         homeSearchView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        homeSearchView.searchBar.textField.delegate = self
     }
 
 }
@@ -47,12 +51,31 @@ extension HomeViewController {
             switch result {
             case .success(let forecast):
                 let thisForecast = forecast as ForecastInstance
-                print(thisForecast)
+                self.forecastInstance = thisForecast
             case .error(let err):
                 print(err)
             }
 
         }
     }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let str = textField.text else { return false }
+        if str.count == 0 {
+            return false
+        } else {
+            let strResult = str.removeSpecialCharactersFromText()
+            shouldShowSearchResults = true
+            
+            fetchData()
+            textField.resignFirstResponder()
+            return true
+        }
+
+    }
+    
 }
 
