@@ -16,6 +16,11 @@
 		03B022F8208FBC3200A4E569 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022F7208FBC3200A4E569 /* ColorExtensions.swift */; };
 		03B022FA208FBC4A00A4E569 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022F9208FBC4A00A4E569 /* StringExtensions.swift */; };
 		03B022FC208FBE7800A4E569 /* HomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022FB208FBE7800A4E569 /* HomeSearchView.swift */; };
+		03B022FF208FC1D300A4E569 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B022FE208FC1D300A4E569 /* Forecast.swift */; };
+		03B02301208FCAA200A4E569 /* WBEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02300208FCAA200A4E569 /* WBEnums.swift */; };
+		03B02304208FCD9300A4E569 /* WBFloatingSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02303208FCD9300A4E569 /* WBFloatingSearchBar.swift */; };
+		03B02307208FD1C700A4E569 /* CornerRoundable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02306208FD1C700A4E569 /* CornerRoundable.swift */; };
+		03B02309208FD20F00A4E569 /* Shadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02308208FD20F00A4E569 /* Shadowable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		03B022F7208FBC3200A4E569 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		03B022F9208FBC4A00A4E569 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		03B022FB208FBE7800A4E569 /* HomeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchView.swift; sourceTree = "<group>"; };
+		03B022FE208FC1D300A4E569 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		03B02300208FCAA200A4E569 /* WBEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBEnums.swift; sourceTree = "<group>"; };
+		03B02303208FCD9300A4E569 /* WBFloatingSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBFloatingSearchBar.swift; sourceTree = "<group>"; };
+		03B02306208FD1C700A4E569 /* CornerRoundable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRoundable.swift; sourceTree = "<group>"; };
+		03B02308208FD20F00A4E569 /* Shadowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadowable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 		03B022F2208FBB5500A4E569 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				03B022FE208FC1D300A4E569 /* Forecast.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +141,9 @@
 		03B022F3208FBBB400A4E569 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				03B02305208FD1B400A4E569 /* Protocols */,
+				03B02302208FCD6E00A4E569 /* WBUIKit */,
+				03B022FD208FBF7B00A4E569 /* Enums */,
 				03B022F6208FBC2100A4E569 /* Extensions */,
 				03B022F4208FBBC500A4E569 /* WBColors.swift */,
 			);
@@ -143,6 +157,31 @@
 				03B022F9208FBC4A00A4E569 /* StringExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03B022FD208FBF7B00A4E569 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				03B02300208FCAA200A4E569 /* WBEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		03B02302208FCD6E00A4E569 /* WBUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				03B02303208FCD9300A4E569 /* WBFloatingSearchBar.swift */,
+			);
+			path = WBUIKit;
+			sourceTree = "<group>";
+		};
+		03B02305208FD1B400A4E569 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				03B02306208FD1C700A4E569 /* CornerRoundable.swift */,
+				03B02308208FD20F00A4E569 /* Shadowable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +285,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B022F5208FBBC500A4E569 /* WBColors.swift in Sources */,
+				03B02301208FCAA200A4E569 /* WBEnums.swift in Sources */,
+				03B02309208FD20F00A4E569 /* Shadowable.swift in Sources */,
 				03B022D3208FB9D100A4E569 /* HomeViewController.swift in Sources */,
+				03B02307208FD1C700A4E569 /* CornerRoundable.swift in Sources */,
+				03B022FF208FC1D300A4E569 /* Forecast.swift in Sources */,
 				03B022FA208FBC4A00A4E569 /* StringExtensions.swift in Sources */,
+				03B02304208FCD9300A4E569 /* WBFloatingSearchBar.swift in Sources */,
 				03B022D1208FB9D100A4E569 /* AppDelegate.swift in Sources */,
 				03B022F8208FBC3200A4E569 /* ColorExtensions.swift in Sources */,
 				03B022FC208FBE7800A4E569 /* HomeSearchView.swift in Sources */,

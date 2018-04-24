@@ -21,10 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         
         let homeVC = HomeViewController()
-        let nav = UINavigationController(rootViewController: homeVC)
-        nav.navigationBar.isHidden = true
         
-        window?.rootViewController = nav
+        window?.rootViewController = homeVC
         window?.makeKeyAndVisible()
         
         return true

@@ -16,12 +16,15 @@ class HomeViewController: UIViewController {
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = WBColors.darkBlue
+        
+        setupSearchViewConstraints()
+        fetchData()
     }
 
     //MARK: - Methods
     
     func setupSearchViewConstraints(){
+        
         homeSearchView = HomeSearchView()
         homeSearchView.customizeUI()
         self.view.addSubview(homeSearchView)
@@ -32,6 +35,24 @@ class HomeViewController: UIViewController {
         homeSearchView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         homeSearchView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
+
+}
+
+extension HomeViewController {
     
+    
+    func fetchData(){
+        ForecastInstance.fetchDataWith(search: "Dallas") { (result) in
+            
+            switch result {
+            case .success(let forecast):
+                let thisForecast = forecast as ForecastInstance
+                print(thisForecast)
+            case .error(let err):
+                print(err)
+            }
+
+        }
+    }
 }
 
