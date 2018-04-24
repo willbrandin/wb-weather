@@ -13,7 +13,13 @@ class HomeViewController: UIViewController {
     //MARK: - Properties
     var homeSearchView: HomeSearchView!
     
-    private var forecastInstance: ForecastInstance?
+    private var forecastInstance: ForecastInstance? {
+        didSet {
+            DispatchQueue.main.async {
+                self.homeSearchView.fiveDayForecastView.collectionView.reloadData()
+            }
+        }
+    }
     private var shouldShowSearchResults: Bool = false
     
     //MARK: - View Life Cycle
@@ -38,6 +44,7 @@ class HomeViewController: UIViewController {
         homeSearchView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
         homeSearchView.searchBar.textField.delegate = self
+        homeSearchView.fiveDayForecastView.collectionView.delegate = self
     }
 
 }
@@ -75,6 +82,29 @@ extension HomeViewController: UITextFieldDelegate {
             return true
         }
     }
+    
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let forecast = forecastInstance, let weather = forecast.list else {
+            return 0
+        }
+        
+        return weather.count - 1
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        return UICollectionViewCell()
+        
+    }
+    
     
 }
 

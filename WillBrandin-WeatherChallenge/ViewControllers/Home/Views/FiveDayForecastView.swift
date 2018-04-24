@@ -17,6 +17,7 @@ class FiveDayForecastView: UIView {
     //MARK: - Methods
     func initUI(){
         self.backgroundColor = UIColor.red
+        setupCollectionViewConstraints()
     }
     
     func setupCollectionViewConstraints(){
