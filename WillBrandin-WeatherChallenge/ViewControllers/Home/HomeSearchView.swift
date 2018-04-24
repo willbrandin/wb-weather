@@ -12,6 +12,8 @@ class HomeSearchView: UIView {
     
     //MARK: - Properties
     
+    private var weatherInstance: ForecastInstance?
+    
     //MARK: - UI Elements
     var searchBar: WBFloatingSearchBar!
     var todaysResultView: TodaysResultView!
@@ -19,8 +21,7 @@ class HomeSearchView: UIView {
     
     //MARK: - Init
     
-    func customizeUI(_ showingResults: Bool){
-        
+    func customizeUI(){
         self.backgroundColor = WBColors.darkBlue
         setupSearchBarConstraints()
         setupTodayResultView()
@@ -40,7 +41,7 @@ class HomeSearchView: UIView {
         searchBar.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
     }
     
-    private func setupTodayResultView(){
+    func setupTodayResultView(){
         todaysResultView = TodaysResultView()
         todaysResultView.initUI()
         todaysResultView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,10 +60,10 @@ class HomeSearchView: UIView {
         fiveDayForecastView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(fiveDayForecastView)
         
-        fiveDayForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -15.0).isActive = true
+        fiveDayForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -35.0).isActive = true
         fiveDayForecastView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
         fiveDayForecastView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0).isActive = true
-        fiveDayForecastView.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
+        fiveDayForecastView.heightAnchor.constraint(equalToConstant: 90.0).isActive = true
         
     }
     

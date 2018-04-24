@@ -23,6 +23,8 @@
 		03B02309208FD20F00A4E569 /* Shadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02308208FD20F00A4E569 /* Shadowable.swift */; };
 		03B0230B208FD6D700A4E569 /* TodaysResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0230A208FD6D700A4E569 /* TodaysResultView.swift */; };
 		03B0230D208FD9E700A4E569 /* FiveDayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0230C208FD9E700A4E569 /* FiveDayForecastView.swift */; };
+		03B0230F208FEF5D00A4E569 /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0230E208FEF5D00A4E569 /* CellReusable.swift */; };
+		03B02311208FEF7D00A4E569 /* CollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		03B02308208FD20F00A4E569 /* Shadowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadowable.swift; sourceTree = "<group>"; };
 		03B0230A208FD6D700A4E569 /* TodaysResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysResultView.swift; sourceTree = "<group>"; };
 		03B0230C208FD9E700A4E569 /* FiveDayForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDayForecastView.swift; sourceTree = "<group>"; };
+		03B0230E208FEF5D00A4E569 /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
+		03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 			children = (
 				03B022F7208FBC3200A4E569 /* ColorExtensions.swift */,
 				03B022F9208FBC4A00A4E569 /* StringExtensions.swift */,
+				03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			children = (
 				03B02306208FD1C700A4E569 /* CornerRoundable.swift */,
 				03B02308208FD20F00A4E569 /* Shadowable.swift */,
+				03B0230E208FEF5D00A4E569 /* CellReusable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -293,9 +299,11 @@
 				03B022F5208FBBC500A4E569 /* WBColors.swift in Sources */,
 				03B02301208FCAA200A4E569 /* WBEnums.swift in Sources */,
 				03B02309208FD20F00A4E569 /* Shadowable.swift in Sources */,
+				03B02311208FEF7D00A4E569 /* CollectionViewExtensions.swift in Sources */,
 				03B0230D208FD9E700A4E569 /* FiveDayForecastView.swift in Sources */,
 				03B0230B208FD6D700A4E569 /* TodaysResultView.swift in Sources */,
 				03B022D3208FB9D100A4E569 /* HomeViewController.swift in Sources */,
+				03B0230F208FEF5D00A4E569 /* CellReusable.swift in Sources */,
 				03B02307208FD1C700A4E569 /* CornerRoundable.swift in Sources */,
 				03B022FF208FC1D300A4E569 /* Forecast.swift in Sources */,
 				03B022FA208FBC4A00A4E569 /* StringExtensions.swift in Sources */,

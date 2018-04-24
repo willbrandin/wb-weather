@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     func setupSearchViewConstraints(){
         
         homeSearchView = HomeSearchView()
-        homeSearchView.customizeUI(shouldShowSearchResults)
+        homeSearchView.customizeUI()
         self.view.addSubview(homeSearchView)
         
         homeSearchView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,12 +69,11 @@ extension HomeViewController: UITextFieldDelegate {
         } else {
             let strResult = str.removeSpecialCharactersFromText()
             shouldShowSearchResults = true
-            
+            homeSearchView.setupTodayResultView()
             fetchData()
             textField.resignFirstResponder()
             return true
         }
-
     }
     
 }
