@@ -45,6 +45,9 @@ class HomeViewController: UIViewController {
         
         homeSearchView.searchBar.textField.delegate = self
         homeSearchView.fiveDayForecastView.collectionView.delegate = self
+        homeSearchView.fiveDayForecastView.collectionView.dataSource = self
+
+        homeSearchView.fiveDayForecastView.collectionView.register(WeatherCollectionViewCell.self)
     }
 
 }
@@ -101,8 +104,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        return UICollectionViewCell()
+        let cell: WeatherCollectionViewCell = collectionView.deqeueReusableCell(for: indexPath)
         
+        cell.configureCell(forecastInstance?.list![indexPath.row + 1])
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: collectionView.bounds.width * 0.18, height: 90)
     }
     
     
