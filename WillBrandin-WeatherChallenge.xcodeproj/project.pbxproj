@@ -26,6 +26,7 @@
 		03B0230F208FEF5D00A4E569 /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B0230E208FEF5D00A4E569 /* CellReusable.swift */; };
 		03B02311208FEF7D00A4E569 /* CollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */; };
 		03B02315208FF0DF00A4E569 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02314208FF0DF00A4E569 /* WeatherCollectionViewCell.swift */; };
+		03B02317208FFFC000A4E569 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02316208FFFC000A4E569 /* DoubleExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		03B0230E208FEF5D00A4E569 /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
 		03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtensions.swift; sourceTree = "<group>"; };
 		03B02314208FF0DF00A4E569 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		03B02316208FFFC000A4E569 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				03B022F7208FBC3200A4E569 /* ColorExtensions.swift */,
 				03B022F9208FBC4A00A4E569 /* StringExtensions.swift */,
 				03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */,
+				03B02316208FFFC000A4E569 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				03B02301208FCAA200A4E569 /* WBEnums.swift in Sources */,
 				03B02309208FD20F00A4E569 /* Shadowable.swift in Sources */,
 				03B02311208FEF7D00A4E569 /* CollectionViewExtensions.swift in Sources */,
+				03B02317208FFFC000A4E569 /* DoubleExtensions.swift in Sources */,
 				03B0230D208FD9E700A4E569 /* FiveDayForecastView.swift in Sources */,
 				03B0230B208FD6D700A4E569 /* TodaysResultView.swift in Sources */,
 				03B022D3208FB9D100A4E569 /* HomeViewController.swift in Sources */,

@@ -63,7 +63,7 @@ class HomeSearchView: UIView {
         fiveDayForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -35.0).isActive = true
         fiveDayForecastView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
         fiveDayForecastView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0).isActive = true
-        fiveDayForecastView.heightAnchor.constraint(equalToConstant: 90.0).isActive = true
+        fiveDayForecastView.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
         
     }
     

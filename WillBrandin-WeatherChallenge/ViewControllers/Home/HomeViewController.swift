@@ -113,7 +113,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.bounds.width * 0.18, height: 90)
+        return CGSize(width: collectionView.bounds.width * 0.18, height: 120)
     }
     
     

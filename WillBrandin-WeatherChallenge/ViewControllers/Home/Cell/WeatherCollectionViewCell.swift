@@ -31,11 +31,13 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         return imageView
     }()
     
-    lazy var date: UILabel! = {
+    lazy var highAndLow: UILabel! = {
         let label = UILabel()
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 12.0)
-        label.text = weatherObj?.date?.stringWithDateFormat(.simpleMonthDate)
+        guard let high = weatherObj?.main?.tempHigh?.temperatureInFahrenheit() else { return label}
+        guard let low = weatherObj?.main?.tempLow?.temperatureInFahrenheit() else { return label }
+        label.text = "\(high)/\(low)"
         return label
     }()
     
@@ -44,9 +46,9 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         stackView.axis = .vertical
         stackView.addArrangedSubview(weekDay)
         stackView.addArrangedSubview(weatherImg)
-        stackView.addArrangedSubview(date)
+        stackView.addArrangedSubview(highAndLow)
         stackView.spacing = 5.0
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -74,5 +76,6 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         forecastStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         forecastStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         weatherImg.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3).isActive = true
+        weatherImg.centerYAnchor.constraint(equalTo: forecastStackView.centerYAnchor).isActive = true
     }
 }

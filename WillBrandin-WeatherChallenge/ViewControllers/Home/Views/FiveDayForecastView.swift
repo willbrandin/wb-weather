@@ -16,7 +16,6 @@ class FiveDayForecastView: UIView {
     var collectionView: UICollectionView!
     //MARK: - Methods
     func initUI(){
-        self.backgroundColor = UIColor.red
         setupCollectionViewConstraints()
     }
     
@@ -31,7 +30,7 @@ class FiveDayForecastView: UIView {
         collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isScrollEnabled = false
-        collectionView.backgroundColor = WBColors.darkBlue
+        collectionView.backgroundColor = UIColor.clear
         addSubview(collectionView)
         
         collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

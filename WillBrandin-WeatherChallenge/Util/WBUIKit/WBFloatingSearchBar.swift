@@ -62,6 +62,7 @@ class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
         
         imgView.widthAnchor.constraint(equalToConstant: 20.0).isActive = true
         imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor).isActive = true
+        textField.heightAnchor.constraint(equalTo: searchBarStackView.heightAnchor).isActive = true
     }
     
     
