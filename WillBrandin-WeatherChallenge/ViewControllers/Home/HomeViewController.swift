@@ -82,7 +82,7 @@ extension HomeViewController {
     
     
     func fetchData(_ searchValue: String){
-        ForecastObject.fetchDataWith(search: searchValue) { (result) in
+        Forecast.fetchDataWith(search: searchValue) { (result) in
             
             switch result {
             case .success(let forecast):

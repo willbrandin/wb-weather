@@ -11,7 +11,7 @@ import UIKit
 class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
     
     //MARK: - Properties
-    private var weatherObj: ForecastObject?
+    private var weatherObj: Forecast?
     
     //MARK: - UI Elements
     lazy var weekDay: UILabel! = {
@@ -36,7 +36,8 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
     
     lazy var weatherImg: UIImageView = {
         let imageView = UIImageView()
-        let type = CollectionViewImageType(rawValue: (weatherObj?.weather![0].weatherType)!)
+        guard let weatherType = weatherObj?.weather?.first?.weatherType else { return imageView}
+        let type = CollectionViewImageType(rawValue: weatherType)
         imageView.image = type?.returnImgForWeatherType()
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -46,8 +47,8 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         let label = UILabel()
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 12.0)
-        guard let high = weatherObj?.main?.tempHigh?.temperatureInFahrenheit() else { return label}
-        guard let low = weatherObj?.main?.tempLow?.temperatureInFahrenheit() else { return label }
+        guard let high = weatherObj?.temperature?.tempHigh?.temperatureInFahrenheit() else { return label}
+        guard let low = weatherObj?.temperature?.tempLow?.temperatureInFahrenheit() else { return label }
         label.text = "\(high)/\(low)"
         return label
     }()
@@ -76,7 +77,7 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         
     }
     
-    func configureCell(_ weather: ForecastObject?){
+    func configureCell(_ weather: Forecast?){
         self.weatherObj = weather
         setupStackViewConstraints()
     }

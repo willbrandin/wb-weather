@@ -55,9 +55,9 @@ class TodaysResultView: UIView {
     
     //MARK: - Methods
     
-    func reloadData(_ forecast: ForecastObject?) {
+    func reloadData(_ forecast: Forecast?) {
         
-        guard let tempText = forecast?.main?.currentTemp else { return }
+        guard let tempText = forecast?.temperature?.currentTemp else { return }
         
         temperatureTitle.text = "\(tempText.temperatureInFahrenheit())°"
         weatherImg.image = WBImages.WeatherImage.thunderstormLarge

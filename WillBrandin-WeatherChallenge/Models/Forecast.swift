@@ -14,25 +14,29 @@ import Foundation
 ///ForecastObject contains the data specific to a forecast like temp, weather, etc.
 struct ForecastInstance: Decodable {
     
-    var list: [ForecastObject]?
-     
-    
+    var list: [Forecast]?
 }
 
-struct ForecastObject: Decodable{
-    var main: Forecast?
+///Represents a single Forecast.
+///main contains all temperature data.
+///weather is an array with one object in it. Default value used should be first.
+///date is the date for day recognized. The date is represented every 3 hours. Therefore, I will show 3:00pm, 6:00pm, etc. for the forecast.
+struct Forecast: Decodable{
+    
+    var temperature: Temperature?
     var weather: [Weather]?
     var date: String?
     
     enum CodingKeys: String, CodingKey {
-        case main, weather
+        case weather
+        case temperature = "main"
         case date = "dt_txt"
     }
     
+    ///Weather object contains the weather type aka "Cloudy" and a short description.
     struct Weather: Decodable {
         var weatherType: String?
         var weatherDescription: String?
-        
         
         enum CodingKeys: String, CodingKey {
             case weatherType = "main"
@@ -40,12 +44,12 @@ struct ForecastObject: Decodable{
         }
     }
     
-    struct Forecast: Decodable {
+    ///Temperature object contains all data that refers to temperatures.
+    struct Temperature: Decodable {
         
         var currentTemp: Double? //temp
         var tempHigh: Double? //temp_max
         var tempLow: Double? //temp_min
-        
         
         enum CodingKeys: String, CodingKey {
             case currentTemp = "temp"
@@ -54,8 +58,12 @@ struct ForecastObject: Decodable{
         }
     }
     
-    //MARK: - Methods
+}
+
+//MARK: - Methods
+extension Forecast {
     
+    ///Takes in a search key and upon completion, returns a Result<T,U>
     static func fetchDataWith(search: String?, completion: @escaping (Result<ForecastInstance, WBError?>) -> Void) {
         
         let defaults = UserDefaults.standard
@@ -82,6 +90,11 @@ struct ForecastObject: Decodable{
             do {
                 let forecast = try JSONDecoder().decode(ForecastInstance.self, from: data)
                 
+                ///Only sets the user defaults if the forecast is valid.
+                ///What can happen is that an invalid string can be entered and no results found. However, an Instace is still created so it will not fail.
+                ///I am checking forecast.list to make sure there are values and if so then I will save to UserDefaults
+                ///Now if a user searches and they get an error, when they re-open the app, it will not present an error, just show the trip before.
+                ///This will be a better user experience and not as confusing.
                 if let _ = forecast.list {
                     defaults.setValue(searchedText, forKey: WBUserDefaultKeys.searchKey.rawValue)
                     defaults.set(true, forKey: WBUserDefaultKeys.didSearch.rawValue)
