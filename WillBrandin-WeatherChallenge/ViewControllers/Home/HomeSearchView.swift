@@ -14,23 +14,22 @@ class HomeSearchView: UIView {
     //MARK: - UI Elements
     var searchBar: WBFloatingSearchBar!
     var todaysResultView: TodaysResultView!
-    var fiveDayForecastView: FiveDayForecastView!
+    var upcomingForecastView: FiveDayForecastView!
     
     //MARK: - Init
-    
     override func layoutSubviews() {
         setupGradientBackground()
     }
     
+    ///Used to initialize the UI
     func customizeUI(){
-     
-        setupSearchBarConstraints()
+        setupSearchBar()
         setupTodayResultView()
-        setupFiveDayForecastView()
+        setupUpcomingForecastView()
     }
     
     //MARK: - Methods
-    private func setupSearchBarConstraints(){
+    private func setupSearchBar(){
         searchBar = WBFloatingSearchBar()
         searchBar.initSearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -55,16 +54,16 @@ class HomeSearchView: UIView {
         
     }
     
-    private func setupFiveDayForecastView(){
-        fiveDayForecastView = FiveDayForecastView()
-        fiveDayForecastView.initUI()
-        fiveDayForecastView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(fiveDayForecastView)
+    private func setupUpcomingForecastView(){
+        upcomingForecastView = FiveDayForecastView()
+        upcomingForecastView.initUI()
+        upcomingForecastView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(upcomingForecastView)
         
-        fiveDayForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0).isActive = true
-        fiveDayForecastView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0).isActive = true
-        fiveDayForecastView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0).isActive = true
-        fiveDayForecastView.heightAnchor.constraint(equalToConstant: 130.0).isActive = true
+        upcomingForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0).isActive = true
+        upcomingForecastView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0).isActive = true
+        upcomingForecastView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0).isActive = true
+        upcomingForecastView.heightAnchor.constraint(equalToConstant: 130.0).isActive = true
         
     }
     

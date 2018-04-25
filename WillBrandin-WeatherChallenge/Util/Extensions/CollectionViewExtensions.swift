@@ -9,13 +9,14 @@
 import UIKit
 
 extension UITableView {
-    ///Registers the cell the using the cell's, that conforms to ReusableView, name.
+    ///When T conforms to ReusableView then I can use the default reuseId given. Aka the views class name.
     func register<T: UITableViewCell>(_: T.Type) where T: ReusableView {
         register(T.self, forCellReuseIdentifier: T.defaultReuseIdentifier)
     }
     
-    
-    func deqeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T where T: ReusableView{
+    ///Because I know that the cell confomrs to ReusableView I know it has a defaultReuseId property
+    ///Using this I can declare a cell in a much cleaner way in CellForRow.
+    func deqeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T where T: ReusableView {
         guard let cell = dequeueReusableCell(withIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.defaultReuseIdentifier)")
         }
@@ -27,10 +28,13 @@ extension UITableView {
 
 extension UICollectionView {
     
+    ///When T conforms to ReusableView then I can use the default reuseId given. Aka the views class name.
     func register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView {
         register(T.self, forCellWithReuseIdentifier: T.defaultReuseIdentifier)
     }
     
+    ///Because I know that the cell confomrs to ReusableView I know it has a defaultReuseId property
+    ///Using this I can declare a cell in a much cleaner way in CellForRow.
     func deqeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T where T: ReusableView{
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
             fatalError("Could not dequeue cell with identifier: \(T.defaultReuseIdentifier)")

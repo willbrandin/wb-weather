@@ -10,6 +10,7 @@ import UIKit
 
 struct WBImages {
     
+    ///Images directly related to Weather.
     struct WeatherImage {
         static var thunderstormLarge: UIImage? {
             return UIImage(named: "thunderstorm")
@@ -31,11 +32,12 @@ struct WBImages {
             return UIImage(named: "sunny")
         }
         
+        ///Default center image. Will remain static.
+        ///Look to make dynamic in future release.
         static var thunderstorm: UIImage? {
             return UIImage(named: "thunderstorm2")
         }
     }
-    
     
     static var search: UIImage? {
         return UIImage(named: "search")

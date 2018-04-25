@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     private var forecastInstance: ForecastInstance? {
         didSet {
             DispatchQueue.main.async {
-                self.homeSearchView.fiveDayForecastView.collectionView.reloadData()
+                self.homeSearchView.upcomingForecastView.collectionView.reloadData()
                 self.homeSearchView.todaysResultView.reloadData(self.forecastInstance?.list?.first)
             }
         }
@@ -69,10 +69,10 @@ class HomeViewController: UIViewController {
     private func setDelegates(){
         
         homeSearchView.searchBar.textField.delegate = self
-        homeSearchView.fiveDayForecastView.collectionView.delegate = self
-        homeSearchView.fiveDayForecastView.collectionView.dataSource = self
+        homeSearchView.upcomingForecastView.collectionView.delegate = self
+        homeSearchView.upcomingForecastView.collectionView.dataSource = self
         
-        homeSearchView.fiveDayForecastView.collectionView.register(WeatherCollectionViewCell.self)
+        homeSearchView.upcomingForecastView.collectionView.register(WeatherCollectionViewCell.self)
     }
     
 }

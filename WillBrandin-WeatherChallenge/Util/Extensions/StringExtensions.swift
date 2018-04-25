@@ -16,7 +16,7 @@ extension String {
         return self.components(separatedBy: notAllowedChars).joined(separator: "")
     }
     
-    func stringToDate() -> Date {
+    private func stringToDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = WBDateFormat.weekDayAndTime.rawValue
         dateFormatter.timeZone = TimeZone.current

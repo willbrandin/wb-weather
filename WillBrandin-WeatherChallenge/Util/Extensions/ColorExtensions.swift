@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 extension UIColor {
     
     convenience init(hex: String) {

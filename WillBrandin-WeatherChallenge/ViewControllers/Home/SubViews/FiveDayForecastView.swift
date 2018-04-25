@@ -12,11 +12,9 @@ class FiveDayForecastView: UIView {
     
     
     //MARK: - UI Elements
-    
     var collectionView: UICollectionView!
     
     //MARK: - Init
-    
     func initUI(){
         setupCollectionViewConstraints()
     }
@@ -39,7 +37,6 @@ class FiveDayForecastView: UIView {
     private func setupCollectionViewConstraints(){
         
         initCollectionView()
-        
         collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         collectionView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         collectionView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true

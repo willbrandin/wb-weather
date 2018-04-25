@@ -21,7 +21,7 @@ class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
     
     lazy var textField: UITextField! = {
         let textField = UITextField()
-        textField.placeholder = "Search a City"
+        textField.placeholder = "Search a City" //Put in enum
         textField.font = UIFont.systemFont(ofSize: 16.0)
         textField.textColor = WBColors.darkBlue
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,6 @@ class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
     
 
     private func formatTextField(){
-        
         textField.borderStyle = .none
         textField.backgroundColor = UIColor.white
         textField.autocorrectionType = .yes
@@ -75,7 +74,4 @@ class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
         textField.contentVerticalAlignment = .center
         textField.textColor = UIColor.black
     }
-    
-    
-
 }

@@ -12,10 +12,8 @@ class TodaysResultView: UIView {
     
     
     //MARK: - UI Elements
-    
     lazy var temperatureTitle: UILabel! = {
         let label = UILabel()
-        
         label.font = UIFont.systemFont(ofSize: 55.0)
         label.textColor = UIColor.white
         return label
@@ -54,7 +52,8 @@ class TodaysResultView: UIView {
     }
     
     //MARK: - Methods
-    
+    ///Called from HomeVC when new Forecast is fetched.
+    ///Fills in text and image from Forecast
     func reloadData(_ forecast: Forecast?) {
         
         guard let tempText = forecast?.temperature?.currentTemp else { return }
