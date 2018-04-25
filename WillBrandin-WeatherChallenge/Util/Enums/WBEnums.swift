@@ -20,7 +20,6 @@ enum WBUserDefaultKeys: String {
     case didSearch = "didSearch"
 }
 
-
 enum CollectionViewImageType: String {
     case cloudy = "Clouds"
     case drizzle = "Drizzle"
@@ -58,3 +57,7 @@ enum WBDateFormat: String {
     case weekday = "E"
     case simpleMonthDate = "MM/dd"
 }
+
+
+
+

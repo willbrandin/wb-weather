@@ -82,13 +82,14 @@ extension HomeViewController {
             switch result {
             case .success(let forecast):
                 let thisForecast = forecast as ForecastInstance
-                if let _ = thisForecast.list {
                     self.forecastInstance = thisForecast
-                } else {
-                    print("ERROR: Can't read state")
-                }
+                
             case .error(let error):
-                print(error)
+                //let err = error
+                guard let alert = error?.initAlert() else { return }
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
 
         }
@@ -97,7 +98,9 @@ extension HomeViewController {
     private func fetchFromDefaults(){
         let defaults = UserDefaults.standard
         guard let search = defaults.string(forKey: WBUserDefaultKeys.searchKey.rawValue) else { return }
+        
         fetchData(search)
+        
     }
 }
 
