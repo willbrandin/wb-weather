@@ -32,11 +32,7 @@ enum WBError: Error {
             let alert = UIAlertController.defaultAlert("That won't work", "Sorry, but that format isn't working. Try searching something else.")
             alert.addDefaultAction()
             return alert
-            
-        default:
-            let alert = UIAlertController.defaultAlert("Hmm", "Something isn't right. Try again later.")
-            alert.addDefaultAction()
-            return alert
+        
         }
         
     }

@@ -22,6 +22,10 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -85,7 +89,6 @@ extension HomeViewController {
                     self.forecastInstance = thisForecast
                 
             case .error(let error):
-                //let err = error
                 guard let alert = error?.initAlert() else { return }
                 DispatchQueue.main.async {
                     self.present(alert, animated: true, completion: nil)
@@ -145,7 +148,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width * 0.18, height: 120)
+        return CGSize(width: collectionView.bounds.width * 0.18, height: collectionView.bounds.height)
     }
 }
 

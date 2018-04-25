@@ -56,6 +56,7 @@ enum WBDateFormat: String {
     case serverDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     case weekday = "E"
     case simpleMonthDate = "MM/dd"
+    case justTime = "h:mm a"
 }
 
 

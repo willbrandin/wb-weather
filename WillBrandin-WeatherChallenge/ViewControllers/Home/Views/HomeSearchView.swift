@@ -43,10 +43,10 @@ class HomeSearchView: UIView {
         todaysResultView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(todaysResultView)
         
-        todaysResultView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor, constant: 65.0).isActive = true
+        todaysResultView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor, constant: 45.0).isActive = true
         todaysResultView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         todaysResultView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.6).isActive = true
-        todaysResultView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        todaysResultView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.45).isActive = true
         
     }
     
@@ -56,10 +56,10 @@ class HomeSearchView: UIView {
         fiveDayForecastView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(fiveDayForecastView)
         
-        fiveDayForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -35.0).isActive = true
+        fiveDayForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0).isActive = true
         fiveDayForecastView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
         fiveDayForecastView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0).isActive = true
-        fiveDayForecastView.heightAnchor.constraint(equalToConstant: 120.0).isActive = true
+        fiveDayForecastView.heightAnchor.constraint(equalToConstant: 130.0).isActive = true
         
     }
     

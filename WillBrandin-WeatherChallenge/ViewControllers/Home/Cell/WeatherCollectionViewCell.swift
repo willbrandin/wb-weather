@@ -22,6 +22,14 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         return label
     }()
     
+    lazy var timeLbl: UILabel! = {
+        let label = UILabel()
+        label.text = weatherObj?.date?.stringWithDateFormat(.justTime)
+        label.font = UIFont.systemFont(ofSize: 12.0)
+        label.textColor = UIColor.lightGray
+        return label
+    }()
+    
     lazy var weatherImg: UIImageView = {
         let imageView = UIImageView()
         let type = CollectionViewImageType(rawValue: (weatherObj?.weather![0].weatherType)!)
@@ -44,9 +52,10 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.addArrangedSubview(weekDay)
+        stackView.addArrangedSubview(timeLbl)
         stackView.addArrangedSubview(weatherImg)
         stackView.addArrangedSubview(highAndLow)
-        stackView.spacing = 5.0
+        stackView.spacing = 3.0
         stackView.distribution = .fill
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false

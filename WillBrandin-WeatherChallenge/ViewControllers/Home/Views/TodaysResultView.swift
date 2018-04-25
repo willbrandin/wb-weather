@@ -60,7 +60,7 @@ class TodaysResultView: UIView {
         
         temperatureTitle.text = "\(tempText.temperatureInFahrenheit())°"
         weatherImg.image = WBImages.WeatherImage.thunderstormLarge
-        weatherDescription.text = forecast?.weather?.first?.weatherDescription
+        weatherDescription.text = forecast?.weather?.first?.weatherDescription?.capitalized
     }
     
     private func setupStackViewConstraints(){
