@@ -39,7 +39,7 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         guard let weatherType = weatherObj?.weather?.first?.weatherType else { return imageView}
         let type = CollectionViewImageType(rawValue: weatherType)
         imageView.image = type?.returnImgForWeatherType()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
