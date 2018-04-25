@@ -11,7 +11,7 @@ import UIKit
 class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
     
     //MARK: - Properties
-    private var weatherObj: ForecastInstance.ForecastObject?
+    private var weatherObj: ForecastObject?
     
     //MARK: - UI Elements
     lazy var weekDay: UILabel! = {
@@ -76,7 +76,7 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         
     }
     
-    func configureCell(_ weather: ForecastInstance.ForecastObject?){
+    func configureCell(_ weather: ForecastObject?){
         self.weatherObj = weather
         setupStackViewConstraints()
     }

@@ -16,29 +16,30 @@ struct ForecastInstance: Decodable {
     
     var list: [ForecastObject]?
     
-    struct ForecastObject: Decodable{
-        var main: Forecast?
-        var weather: [Weather]?
-        var date: String?
-        
-        enum CodingKeys: String, CodingKey {
-            case main, weather
-            case date = "dt_txt"
-        }
-        
+    
+}
+
+struct ForecastObject: Decodable{
+    var main: Forecast?
+    var weather: [Weather]?
+    var date: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case main, weather
+        case date = "dt_txt"
     }
     
     struct Weather: Decodable {
         var weatherType: String?
         var weatherDescription: String?
-
-
+        
+        
         enum CodingKeys: String, CodingKey {
             case weatherType = "main"
             case weatherDescription = "description"
         }
     }
-
+    
     struct Forecast: Decodable {
         
         var currentTemp: Double? //temp
@@ -58,7 +59,7 @@ struct ForecastInstance: Decodable {
     static func fetchDataWith(search: String?, completion: @escaping (Result<ForecastInstance, WBError?>) -> Void) {
         
         let defaults = UserDefaults.standard
-        guard var searchedText = search else { 
+        guard var searchedText = search else {
             completion(.error(.searchTextNil))
             return
         }

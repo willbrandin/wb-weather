@@ -55,7 +55,7 @@ class TodaysResultView: UIView {
     
     //MARK: - Methods
     
-    func reloadData(_ forecast: ForecastInstance.ForecastObject?) {
+    func reloadData(_ forecast: ForecastObject?) {
         
         guard let tempText = forecast?.main?.currentTemp else { return }
         
