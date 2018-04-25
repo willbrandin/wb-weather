@@ -23,8 +23,7 @@ class HomeSearchView: UIView {
     }
     
     func customizeUI(){
-        //self.backgroundColor = WBColors.darkBlue
-//        setupGradientBackground()
+     
         setupSearchBarConstraints()
         setupTodayResultView()
         setupFiveDayForecastView()
