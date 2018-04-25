@@ -69,7 +69,7 @@ class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
         
         textField.borderStyle = .none
         textField.backgroundColor = UIColor.white
-        textField.autocorrectionType = .no
+        textField.autocorrectionType = .yes
         textField.keyboardType = .default
         textField.returnKeyType = .search
         textField.contentVerticalAlignment = .center

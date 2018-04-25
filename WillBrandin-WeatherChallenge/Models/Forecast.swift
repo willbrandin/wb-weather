@@ -62,7 +62,7 @@ struct ForecastInstance: Decodable {
             return
         }
         
-        let jsonURLString = "http://api.openweathermap.org/data/2.5/forecast?q=\(searchedText)&cnt=7&APPID=3ca14619ab6b9603a054088537948f2b"
+        let jsonURLString = "http://api.openweathermap.org/data/2.5/forecast?q=\(searchedText)&cnt=6&APPID=3ca14619ab6b9603a054088537948f2b"
         
         guard let url = URL(string: jsonURLString) else { return }
         

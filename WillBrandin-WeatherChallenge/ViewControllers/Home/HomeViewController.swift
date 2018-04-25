@@ -112,11 +112,15 @@ extension HomeViewController {
 
 extension HomeViewController: UITextFieldDelegate {
     //Search will only be performed when the user enters in more than 0 characters.
-    //TODO: - When 0 characters. indicate to user that it cannot perform search. Pop up or inline error?
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let str = textField.text else { return false }
         if str.count == 0 {
-            return false
+            textField.resignFirstResponder()
+            let alert = WBError.searchTextNil.initAlert()
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
+            return true
         } else {
             let strResult = str.removeSpecialCharactersFromText()
             fetchData(strResult)
