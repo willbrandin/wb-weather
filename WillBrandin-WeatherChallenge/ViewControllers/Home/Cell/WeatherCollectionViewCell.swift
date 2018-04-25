@@ -17,9 +17,9 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
     
     lazy var weekDay: UILabel! = {
         let label = UILabel()
-        label.text = weatherObj?.date
+        label.text = weatherObj?.date?.stringWithDateFormat(.weekday)
         label.font = UIFont.systemFont(ofSize: 12.0)
-        label.textColor = UIColor.white
+        label.textColor = UIColor.lightGray
         return label
     }()
     
@@ -33,8 +33,9 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
     
     lazy var date: UILabel! = {
         let label = UILabel()
-        label.textColor = WBColors.brightBlue
-        label.text = weatherObj?.date
+        label.textColor = UIColor.lightGray
+        label.font = UIFont.systemFont(ofSize: 12.0)
+        label.text = weatherObj?.date?.stringWithDateFormat(.simpleMonthDate)
         return label
     }()
     
@@ -72,7 +73,6 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         forecastStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         forecastStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         forecastStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        weekDay.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3).isActive = true
-        weatherImg.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        weatherImg.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3).isActive = true
     }
 }

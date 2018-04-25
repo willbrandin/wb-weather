@@ -42,3 +42,12 @@ enum CollectionViewImageType: String {
         }
     }
 }
+
+enum WBDateFormat: String {
+    case simpleDate = "MM/dd/yyyy"
+    case dateAndTime = "MMMM d, h:mm a"
+    case weekDayAndTime = "yyyy-MM-dd HH:mm:ss"
+    case serverDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    case weekday = "E"
+    case simpleMonthDate = "MM/dd"
+}

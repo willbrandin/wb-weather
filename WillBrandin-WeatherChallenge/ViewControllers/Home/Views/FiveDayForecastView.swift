@@ -31,7 +31,7 @@ class FiveDayForecastView: UIView {
         collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isScrollEnabled = false
-
+        collectionView.backgroundColor = WBColors.darkBlue
         addSubview(collectionView)
         
         collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
