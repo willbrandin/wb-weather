@@ -10,6 +10,7 @@ import Foundation
 
 extension Double {
     
+    ///Takes temperature in Kelvin and converts to Fahrenheit
     func temperatureInFahrenheit() -> Int {
         let fahrenheitTemperature = (9 / 5) * (self - 273) + 32
         return Int(fahrenheitTemperature)

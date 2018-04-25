@@ -10,7 +10,7 @@ import UIKit
 
 struct WBImages {
     
-    static var thunderstormLarge: UIImage {
+    static var thunderstormLarge: UIImage? {
         return UIImage(named: "thunderstorm")
     }
     

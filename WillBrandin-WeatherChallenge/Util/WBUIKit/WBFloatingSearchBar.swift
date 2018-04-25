@@ -11,7 +11,6 @@ import UIKit
 class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
 
     //MARK: - UI Elements
-    
     lazy var imgView: UIImageView! = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "search")
@@ -53,7 +52,7 @@ class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
     
     
     //MARK: - Methods
-    func setupStackViewConstraints(){
+    private func setupStackViewConstraints(){
         addSubview(searchBarStackView)
         searchBarStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10.0).isActive = true
         searchBarStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10.0).isActive = true
@@ -65,9 +64,8 @@ class WBFloatingSearchBar: UIView, CornerRoundable, Shadowable {
         textField.heightAnchor.constraint(equalTo: searchBarStackView.heightAnchor).isActive = true
     }
     
-    
-    
-    func formatTextField(){
+
+    private func formatTextField(){
         
         textField.borderStyle = .none
         textField.backgroundColor = UIColor.white

@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-   
+    
     func removeSpecialCharactersFromText() -> String {
         
         let notAllowedChars: CharacterSet = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,").inverted

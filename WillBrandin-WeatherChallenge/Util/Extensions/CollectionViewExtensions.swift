@@ -9,10 +9,11 @@
 import UIKit
 
 extension UITableView {
-    
+    ///Registers the cell the using the cell's, that conforms to ReusableView, name.
     func register<T: UITableViewCell>(_: T.Type) where T: ReusableView {
         register(T.self, forCellReuseIdentifier: T.defaultReuseIdentifier)
     }
+    
     
     func deqeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T where T: ReusableView{
         guard let cell = dequeueReusableCell(withIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {

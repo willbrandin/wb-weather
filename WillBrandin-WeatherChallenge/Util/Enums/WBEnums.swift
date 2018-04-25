@@ -8,6 +8,8 @@
 
 import UIKit
 
+///Result used for callbacks.
+///For closure it allows to switch on result providing the object from success or the type of Error.
 public enum Result<T,U> {
     case success(T)
     case error(U)
