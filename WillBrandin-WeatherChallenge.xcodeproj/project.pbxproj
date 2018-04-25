@@ -134,6 +134,7 @@
 		03B022F0208FBB3A00A4E569 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				03B022FB208FBE7800A4E569 /* HomeSearchView.swift */,
 				03B02313208FF0C600A4E569 /* Views */,
 				03B02312208FF0AE00A4E569 /* Cell */,
 				03B022D2208FB9D100A4E569 /* HomeViewController.swift */,
@@ -220,7 +221,6 @@
 		03B02313208FF0C600A4E569 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				03B022FB208FBE7800A4E569 /* HomeSearchView.swift */,
 				03B0230A208FD6D700A4E569 /* TodaysResultView.swift */,
 				03B0230C208FD9E700A4E569 /* FiveDayForecastView.swift */,
 			);
