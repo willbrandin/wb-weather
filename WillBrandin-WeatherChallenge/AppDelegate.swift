@@ -20,7 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         
-        let homeVC = HomeViewController()
+        
+        ///Determines if user has a previously searched query.
+        ///If user defaults find the BOOL in User defaults it will pass it to HomeViewController as a property. The VC will use this to perform the fetch with the value from User Default
+        let defaults = UserDefaults.standard
+        let hasSearchKey = defaults.bool(forKey: WBUserDefaultKeys.didSearch.rawValue)
+        
+        let homeVC = HomeViewController(hasSearchKey)
         
         window?.rootViewController = homeVC
         window?.makeKeyAndVisible()

@@ -56,7 +56,7 @@ struct ForecastInstance: Decodable {
     //MARK: - Methods
     
     static func fetchDataWith(search: String?, completion: @escaping (Result<ForecastInstance, Error?>) -> Void) {
-        
+        let defaults = UserDefaults.standard
         guard let searchedText = search else {
             
             return
@@ -72,6 +72,8 @@ struct ForecastInstance: Decodable {
             
             do {
                 let forecast = try JSONDecoder().decode(ForecastInstance.self, from: data)
+                defaults.setValue(searchedText, forKey: WBUserDefaultKeys.searchKey.rawValue)
+                defaults.set(true, forKey: WBUserDefaultKeys.didSearch.rawValue)
                 completion(.success(forecast))
             } catch {
                 completion(.error(err))

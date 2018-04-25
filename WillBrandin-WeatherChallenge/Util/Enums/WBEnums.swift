@@ -13,6 +13,11 @@ public enum Result<T,U> {
     case error(U)
 }
 
+enum WBUserDefaultKeys: String {
+    case searchKey = "searchPhrase"
+    case didSearch = "didSearch"
+}
+
 
 enum CollectionViewImageType: String {
     case cloudy = "Clouds"

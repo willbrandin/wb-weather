@@ -21,15 +21,30 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    private var shouldShowSearchResults: Bool = false
+    private var shouldShowPreviousResults: Bool = false
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSearchViewConstraints()
+        
+        if shouldShowPreviousResults {
+            fetchFromDefaults()
+        }
     }
-
+    
+    //MARK: - Init
+    
+    init(_ withSearch: Bool) {
+        self.shouldShowPreviousResults = withSearch
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Methods
     
     func setupSearchViewConstraints(){
@@ -73,6 +88,12 @@ extension HomeViewController {
 
         }
     }
+    
+    private func fetchFromDefaults(){
+        let defaults = UserDefaults.standard
+        guard let search = defaults.string(forKey: WBUserDefaultKeys.searchKey.rawValue) else { return }
+        fetchData(search)
+    }
 }
 
 extension HomeViewController: UITextFieldDelegate {
@@ -83,7 +104,6 @@ extension HomeViewController: UITextFieldDelegate {
             return false
         } else {
             let strResult = str.removeSpecialCharactersFromText()
-            shouldShowSearchResults = true
             fetchData(strResult)
             textField.resignFirstResponder()
             return true
