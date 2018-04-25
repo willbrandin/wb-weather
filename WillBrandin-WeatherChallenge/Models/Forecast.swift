@@ -15,7 +15,7 @@ import Foundation
 struct ForecastInstance: Decodable {
     
     var list: [ForecastObject]?
-    
+     
     
 }
 
