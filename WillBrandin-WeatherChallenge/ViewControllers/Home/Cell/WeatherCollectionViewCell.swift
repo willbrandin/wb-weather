@@ -22,6 +22,10 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         return label
     }()
     
+    ///Time Label added due to API constraints.
+    ///API returned a date however it was every 3 hours for each day.
+    ///In a normal situation I would talk to API owners to see if I could just have each single day.
+    ///As a fix I added the time as a seperate label. This gives the user context as to what time they can expect certain weather elements
     lazy var timeLbl: UILabel! = {
         let label = UILabel()
         label.text = weatherObj?.date?.stringWithDateFormat(.justTime)
