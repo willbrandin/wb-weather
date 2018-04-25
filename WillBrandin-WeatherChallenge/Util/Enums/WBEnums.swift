@@ -21,7 +21,6 @@ enum WBUserDefaultKeys: String {
 }
 
 ///Value from API will init one of the cases
-///Using the enum case I can switch on self to return an image for the collection view image.
 enum CollectionViewImageType: String {
     case cloudy = "Clouds"
     case drizzle = "Drizzle"
@@ -34,6 +33,8 @@ enum CollectionViewImageType: String {
     case extreme = "Extreme"
     case additional = "Additional"
     
+    ///Using the enum case I can switch on self to return an image for the collection view image.
+    ///I do not have all the assets needed to cover additional cases so I will return an image that is close to the weather type.
     func returnImgForWeatherType() -> UIImage? {
         switch self {
         case .cloudy:
