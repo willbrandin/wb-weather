@@ -20,6 +20,8 @@ enum WBUserDefaultKeys: String {
     case didSearch = "didSearch"
 }
 
+///Value from API will init one of the cases
+///Using the enum case I can switch on self to return an image for the collection view image.
 enum CollectionViewImageType: String {
     case cloudy = "Clouds"
     case drizzle = "Drizzle"
@@ -48,7 +50,7 @@ enum CollectionViewImageType: String {
         }
     }
 }
-
+///Date format strings used for this and other projects
 enum WBDateFormat: String {
     case simpleDate = "MM/dd/yyyy"
     case dateAndTime = "MMMM d, h:mm a"

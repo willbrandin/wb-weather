@@ -10,10 +10,16 @@ import UIKit
 
 enum WBError: Error {
     
+    ///Error for when the user passes in no text to the search bar or for some reason fetch is called with nil text.
     case searchTextNil
+    ///Error for when decoder fails. This would be due to a network failure or parsing failure.
     case jsonNotFormatted
+    ///Error returned when the text entered does not return any values from the API.
+    ///ie. ForecastInstance.list = nil
     case badSearchFormat
     
+    ///Initializes a UIAlertController for self.
+    ///Adds a default "Okay" action.
     func initAlert() -> UIAlertController {
         
         switch self {
