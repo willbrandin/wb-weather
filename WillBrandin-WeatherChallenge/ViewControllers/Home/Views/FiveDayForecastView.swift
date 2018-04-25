@@ -10,28 +10,35 @@ import UIKit
 
 class FiveDayForecastView: UIView {
     
-    //MARK: - Properties
     
     //MARK: - UI Elements
+    
     var collectionView: UICollectionView!
-    //MARK: - Methods
+    
+    //MARK: - Init
+    
     func initUI(){
         setupCollectionViewConstraints()
     }
     
-    func setupCollectionViewConstraints(){
+    //MARK: - Methods
+    
+    private func initCollectionView(){
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-//        layout.minimumInteritemSpacing = 
-//        layout.minimumLineSpacing = 0
         
         collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isScrollEnabled = false
         collectionView.backgroundColor = UIColor.clear
         addSubview(collectionView)
+    }
+    
+    private func setupCollectionViewConstraints(){
+        
+        initCollectionView()
         
         collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         collectionView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true

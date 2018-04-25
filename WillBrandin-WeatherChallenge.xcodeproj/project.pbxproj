@@ -27,6 +27,7 @@
 		03B02311208FEF7D00A4E569 /* CollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */; };
 		03B02315208FF0DF00A4E569 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02314208FF0DF00A4E569 /* WeatherCollectionViewCell.swift */; };
 		03B02317208FFFC000A4E569 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B02316208FFFC000A4E569 /* DoubleExtensions.swift */; };
+		03B023192090D59C00A4E569 /* WBImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B023182090D59C00A4E569 /* WBImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		03B02310208FEF7D00A4E569 /* CollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtensions.swift; sourceTree = "<group>"; };
 		03B02314208FF0DF00A4E569 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		03B02316208FFFC000A4E569 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		03B023182090D59C00A4E569 /* WBImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				03B022FD208FBF7B00A4E569 /* Enums */,
 				03B022F6208FBC2100A4E569 /* Extensions */,
 				03B022F4208FBBC500A4E569 /* WBColors.swift */,
+				03B023182090D59C00A4E569 /* WBImages.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				03B02315208FF0DF00A4E569 /* WeatherCollectionViewCell.swift in Sources */,
 				03B02301208FCAA200A4E569 /* WBEnums.swift in Sources */,
 				03B02309208FD20F00A4E569 /* Shadowable.swift in Sources */,
+				03B023192090D59C00A4E569 /* WBImages.swift in Sources */,
 				03B02311208FEF7D00A4E569 /* CollectionViewExtensions.swift in Sources */,
 				03B02317208FFFC000A4E569 /* DoubleExtensions.swift in Sources */,
 				03B0230D208FD9E700A4E569 /* FiveDayForecastView.swift in Sources */,

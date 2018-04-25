@@ -10,9 +10,6 @@ import UIKit
 
 class HomeSearchView: UIView {
     
-    //MARK: - Properties
-    
-    private var weatherInstance: ForecastInstance?
     
     //MARK: - UI Elements
     var searchBar: WBFloatingSearchBar!
@@ -20,7 +17,6 @@ class HomeSearchView: UIView {
     var fiveDayForecastView: FiveDayForecastView!
     
     //MARK: - Init
-    
     func customizeUI(){
         self.backgroundColor = WBColors.darkBlue
         setupSearchBarConstraints()
@@ -41,7 +37,7 @@ class HomeSearchView: UIView {
         searchBar.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
     }
     
-    func setupTodayResultView(){
+    private func setupTodayResultView(){
         todaysResultView = TodaysResultView()
         todaysResultView.initUI()
         todaysResultView.translatesAutoresizingMaskIntoConstraints = false

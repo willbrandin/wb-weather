@@ -10,9 +10,6 @@ import UIKit
 
 class TodaysResultView: UIView {
     
-    //MARK: - Properties
-    
-  
     
     //MARK: - UI Elements
     
@@ -50,10 +47,12 @@ class TodaysResultView: UIView {
     }()
     
     
-    //MARK: - Methods
+    //MARK: - Init
     func initUI(){
         setupStackViewConstraints()
     }
+    
+    //MARK: - Methods
     
     func reloadData(_ forecast: ForecastInstance.ForecastObject?) {
         
@@ -64,12 +63,13 @@ class TodaysResultView: UIView {
         weatherDescription.text = forecast?.weather?.first?.weatherDescription
     }
     
-    func setupStackViewConstraints(){
+    private func setupStackViewConstraints(){
         addSubview(todaysWeatherStackView)
         todaysWeatherStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         todaysWeatherStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         todaysWeatherStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         todaysWeatherStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
         temperatureTitle.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3).isActive = true
         weatherImg.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
     }

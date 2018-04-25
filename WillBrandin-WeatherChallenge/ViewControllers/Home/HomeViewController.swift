@@ -11,8 +11,9 @@ import UIKit
 class HomeViewController: UIViewController {
 
     //MARK: - Properties
-    var homeSearchView: HomeSearchView!
-    
+    private var homeSearchView: HomeSearchView!
+    private var shouldShowPreviousResults: Bool = false
+
     private var forecastInstance: ForecastInstance? {
         didSet {
             DispatchQueue.main.async {
@@ -21,8 +22,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    private var shouldShowPreviousResults: Bool = false
-    
+
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Init
-    
     init(_ withSearch: Bool) {
         self.shouldShowPreviousResults = withSearch
         super.init(nibName: nil, bundle: nil)
@@ -46,28 +45,34 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - Methods
-    
-    func setupSearchViewConstraints(){
+    private func setupSearchViewConstraints(){
         
+        //Initialize View
         homeSearchView = HomeSearchView()
         homeSearchView.customizeUI()
         self.view.addSubview(homeSearchView)
         
+        //Set view constraints
         homeSearchView.translatesAutoresizingMaskIntoConstraints = false
         homeSearchView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         homeSearchView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         homeSearchView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         homeSearchView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
+        setDelegates()
+    }
+    
+    private func setDelegates(){
+        
         homeSearchView.searchBar.textField.delegate = self
         homeSearchView.fiveDayForecastView.collectionView.delegate = self
         homeSearchView.fiveDayForecastView.collectionView.dataSource = self
-
+        
         homeSearchView.fiveDayForecastView.collectionView.register(WeatherCollectionViewCell.self)
     }
-
 }
 
+//MARK: - Fetch Data
 extension HomeViewController {
     
     
@@ -82,8 +87,8 @@ extension HomeViewController {
                 } else {
                     print("ERROR: Can't read state")
                 }
-            case .error(let err):
-                print(err)
+            case .error(let error):
+                print(error)
             }
 
         }
@@ -96,8 +101,11 @@ extension HomeViewController {
     }
 }
 
+//MARK: - Delegates
+
 extension HomeViewController: UITextFieldDelegate {
-    
+    //Search will only be performed when the user enters in more than 0 characters.
+    //TODO: - When 0 characters. indicate to user that it cannot perform search. Pop up or inline error?
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let str = textField.text else { return false }
         if str.count == 0 {
@@ -118,7 +126,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let forecast = forecastInstance, let weather = forecast.list else {
             return 0
         }
-        
         return weather.count - 1
     }
     
@@ -129,17 +136,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: WeatherCollectionViewCell = collectionView.deqeueReusableCell(for: indexPath)
-        
         cell.configureCell(forecastInstance?.list![indexPath.row + 1])
         return cell
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: collectionView.bounds.width * 0.18, height: 120)
     }
-    
-    
 }
 
