@@ -56,10 +56,18 @@ struct ForecastInstance: Decodable {
     //MARK: - Methods
     
     static func fetchDataWith(search: String?, completion: @escaping (Result<ForecastInstance, WBError?>) -> Void) {
+        
         let defaults = UserDefaults.standard
-        guard let searchedText = search else {
+        guard var searchedText = search else {
             completion(.error(.searchTextNil))
             return
+        }
+        
+        ///Hacking it
+        ///In the event that someone puts a "," I am assuming the user is entering a state.
+        ///In this case, OpenWeather will not except the query. So I am adding ",USA" to the string in order to satisfy the requirements for OpenWeather
+        if searchedText.contains(",") {
+            searchedText.append(",USA")
         }
         
         let jsonURLString = "http://api.openweathermap.org/data/2.5/forecast?q=\(searchedText)&cnt=6&APPID=3ca14619ab6b9603a054088537948f2b"
