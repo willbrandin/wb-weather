@@ -17,8 +17,14 @@ class HomeSearchView: UIView {
     var fiveDayForecastView: FiveDayForecastView!
     
     //MARK: - Init
+    
+    override func layoutSubviews() {
+        setupGradientBackground()
+    }
+    
     func customizeUI(){
-        self.backgroundColor = WBColors.darkBlue
+        //self.backgroundColor = WBColors.darkBlue
+//        setupGradientBackground()
         setupSearchBarConstraints()
         setupTodayResultView()
         setupFiveDayForecastView()
@@ -57,9 +63,20 @@ class HomeSearchView: UIView {
         addSubview(fiveDayForecastView)
         
         fiveDayForecastView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20.0).isActive = true
-        fiveDayForecastView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
-        fiveDayForecastView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0).isActive = true
+        fiveDayForecastView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15.0).isActive = true
+        fiveDayForecastView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15.0).isActive = true
         fiveDayForecastView.heightAnchor.constraint(equalToConstant: 130.0).isActive = true
+        
+    }
+    
+    private func setupGradientBackground(){
+        let startingColor = WBColors.brightBlue.cgColor
+        let endingColor = WBColors.darkBlue.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        
+        gradient.frame = self.frame
+        gradient.colors = [startingColor, endingColor]
+        self.layer.insertSublayer(gradient, at: 0)
         
     }
     

@@ -74,6 +74,7 @@ class HomeViewController: UIViewController {
         
         homeSearchView.fiveDayForecastView.collectionView.register(WeatherCollectionViewCell.self)
     }
+    
 }
 
 //MARK: - Fetch Data
@@ -129,10 +130,10 @@ extension HomeViewController: UITextFieldDelegate {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let forecast = forecastInstance, let weather = forecast.list else {
+        guard let forecast = forecastInstance, let _ = forecast.list else {
             return 0
         }
-        return weather.count - 1
+        return 5
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

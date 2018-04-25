@@ -88,7 +88,7 @@ class WeatherCollectionViewCell: UICollectionViewCell, ReusableView {
         forecastStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         forecastStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         forecastStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        weatherImg.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3).isActive = true
+        weatherImg.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25).isActive = true
         weatherImg.centerYAnchor.constraint(equalTo: forecastStackView.centerYAnchor).isActive = true
     }
 }

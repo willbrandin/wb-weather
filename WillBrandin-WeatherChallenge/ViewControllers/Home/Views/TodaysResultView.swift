@@ -29,7 +29,8 @@ class TodaysResultView: UIView {
     
     lazy var weatherDescription: UILabel! = {
         let label = UILabel()
-        label.textColor = WBColors.brightBlue
+        label.font = UIFont.systemFont(ofSize: 18.0, weight: .medium)
+        label.textColor = WBColors.lightText
         return label
     }()
     

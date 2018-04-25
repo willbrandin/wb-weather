@@ -11,11 +11,15 @@ import UIKit
 struct WBColors {
     
     static var darkBlue: UIColor {
-        return UIColor(hex: "4766A9") // used
+        return UIColor(hex: "38589E") // used
     }
     
     static var brightBlue: UIColor {
-        return UIColor(hex: "6EBEFA") //used
+        return UIColor(hex: "6086D8") //used
+    }
+    
+    static var lightText: UIColor {
+        return UIColor(hex: "E9EFFE")
     }
 
 }
