@@ -12,13 +12,13 @@ class TodaysResultView: UIView {
     
     //MARK: - Properties
     
-    private var weatherObj: ForecastInstance.ForecastObject?
+  
     
     //MARK: - UI Elements
     
     lazy var temperatureTitle: UILabel! = {
         let label = UILabel()
-        label.text = "16°"
+        
         label.font = UIFont.systemFont(ofSize: 55.0)
         label.textColor = UIColor.white
         return label
@@ -26,7 +26,6 @@ class TodaysResultView: UIView {
     
     lazy var weatherImg: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "thunderstorm")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -34,7 +33,6 @@ class TodaysResultView: UIView {
     lazy var weatherDescription: UILabel! = {
         let label = UILabel()
         label.textColor = WBColors.brightBlue
-        label.text = "It's sunny out."
         return label
     }()
     
@@ -54,9 +52,16 @@ class TodaysResultView: UIView {
     
     //MARK: - Methods
     func initUI(){
-//        self.temperatureTitle.text = "\(forecast.main?.tempHigh)°"
-//        self.weatherDescription.text = forecast.weather?.description
         setupStackViewConstraints()
+    }
+    
+    func reloadData(_ forecast: ForecastInstance.ForecastObject?) {
+        
+        guard let tempText = forecast?.main?.currentTemp else { return }
+        
+        temperatureTitle.text = "\(tempText.temperatureInFahrenheit())°"
+        //weatherImg.image = UIImage(named: "thunderstorm")
+        weatherDescription.text = forecast?.weather?.first?.weatherDescription
     }
     
     func setupStackViewConstraints(){

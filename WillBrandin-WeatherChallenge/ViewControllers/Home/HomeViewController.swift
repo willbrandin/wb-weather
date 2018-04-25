@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.homeSearchView.fiveDayForecastView.collectionView.reloadData()
+                self.homeSearchView.todaysResultView.reloadData(self.forecastInstance?.list?.first)
             }
         }
     }
@@ -55,13 +56,17 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     
-    func fetchData(){
-        ForecastInstance.fetchDataWith(search: "Dallas") { (result) in
+    func fetchData(_ searchValue: String){
+        ForecastInstance.fetchDataWith(search: searchValue) { (result) in
             
             switch result {
             case .success(let forecast):
                 let thisForecast = forecast as ForecastInstance
-                self.forecastInstance = thisForecast
+                if let _ = thisForecast.list {
+                    self.forecastInstance = thisForecast
+                } else {
+                    print("ERROR: Can't read state")
+                }
             case .error(let err):
                 print(err)
             }
@@ -79,8 +84,7 @@ extension HomeViewController: UITextFieldDelegate {
         } else {
             let strResult = str.removeSpecialCharactersFromText()
             shouldShowSearchResults = true
-            homeSearchView.setupTodayResultView()
-            fetchData()
+            fetchData(strResult)
             textField.resignFirstResponder()
             return true
         }
