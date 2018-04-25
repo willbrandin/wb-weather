@@ -58,7 +58,7 @@ struct ForecastInstance: Decodable {
     static func fetchDataWith(search: String?, completion: @escaping (Result<ForecastInstance, WBError?>) -> Void) {
         
         let defaults = UserDefaults.standard
-        guard var searchedText = search else {
+        guard var searchedText = search else { 
             completion(.error(.searchTextNil))
             return
         }
