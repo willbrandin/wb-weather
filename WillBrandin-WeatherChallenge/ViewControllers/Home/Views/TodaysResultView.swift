@@ -59,7 +59,7 @@ class TodaysResultView: UIView {
         guard let tempText = forecast?.main?.currentTemp else { return }
         
         temperatureTitle.text = "\(tempText.temperatureInFahrenheit())°"
-        weatherImg.image = UIImage(named: "thunderstorm")
+        weatherImg.image = WBImages.WeatherImage.thunderstormLarge
         weatherDescription.text = forecast?.weather?.first?.weatherDescription
     }
     

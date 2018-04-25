@@ -10,10 +10,36 @@ import UIKit
 
 struct WBImages {
     
-    static var thunderstormLarge: UIImage? {
-        return UIImage(named: "thunderstorm")
+    struct WeatherImage {
+        static var thunderstormLarge: UIImage? {
+            return UIImage(named: "thunderstorm")
+        }
+        
+        static var cloudy: UIImage? {
+            return UIImage(named: "cloudy")
+        }
+        
+        static var drizzle: UIImage? {
+            return UIImage(named: "drizzle")
+        }
+        
+        static var rain: UIImage? {
+            return UIImage(named: "rain")
+        }
+        
+        static var sunny: UIImage? {
+            return UIImage(named: "sunny")
+        }
+        
+        static var thunderstorm: UIImage? {
+            return UIImage(named: "thunderstorm2")
+        }
     }
     
+    
+    static var search: UIImage? {
+        return UIImage(named: "search")
+    }
 }
 
 

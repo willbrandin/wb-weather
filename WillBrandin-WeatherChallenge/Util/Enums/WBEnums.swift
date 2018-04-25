@@ -36,15 +36,15 @@ enum CollectionViewImageType: String {
     func returnImgForWeatherType() -> UIImage? {
         switch self {
         case .cloudy:
-            return UIImage(named: "cloudy")
+            return WBImages.WeatherImage.cloudy
         case .drizzle:
-            return UIImage(named: "drizzle")
+            return WBImages.WeatherImage.drizzle
         case .rain, .atmosphere, .snow:
-            return UIImage(named: "rain")
+            return WBImages.WeatherImage.rain
         case .sunny, .clear:
-            return UIImage(named: "sunny")
+            return WBImages.WeatherImage.sunny
         case .thunderstorm, .extreme, .additional:
-            return UIImage(named: "thunderstorm2")
+            return WBImages.WeatherImage.thunderstorm
         
         }
     }
