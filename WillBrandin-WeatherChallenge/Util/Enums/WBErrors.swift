@@ -35,7 +35,7 @@ enum WBError: Error {
             return alert
             
         case .badSearchFormat:
-            let alert = UIAlertController.defaultAlert("That won't work", "Sorry, but that format isn't working. Try searching something else.")
+            let alert = UIAlertController.defaultAlert("No Results", "Sorry, but that format isn't working. Try searching something else.")
             alert.addDefaultAction()
             return alert
         

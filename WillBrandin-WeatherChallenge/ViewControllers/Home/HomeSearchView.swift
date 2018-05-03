@@ -38,7 +38,7 @@ class HomeSearchView: UIView {
         searchBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 25.0).isActive = true
         searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0).isActive = true
-        searchBar.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
+        searchBar.heightAnchor.constraint(equalToConstant: 80.0).isActive = true
     }
     
     private func setupTodayResultView(){

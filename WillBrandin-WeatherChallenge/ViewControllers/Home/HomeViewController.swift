@@ -116,18 +116,40 @@ extension HomeViewController: UITextFieldDelegate {
         guard let str = textField.text else { return false }
         if str.count == 0 {
             textField.resignFirstResponder()
+
             let alert = WBError.searchTextNil.initAlert()
             DispatchQueue.main.async {
                 self.present(alert, animated: true, completion: nil)
             }
+            
             return true
         } else {
+            
             let strResult = str.removeSpecialCharactersFromText()
             fetchData(strResult)
+
             textField.resignFirstResponder()
             return true
         }
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == homeSearchView.searchBar.textField {
+            homeSearchView.searchBar.updateTitleForEditingText()
+        }
+    }
+    
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        ///Colors
+        if textField == homeSearchView.searchBar.textField {
+            homeSearchView.searchBar.updateTitleForEditingText()
+        }
+        
+    }
+    
     
 }
 
